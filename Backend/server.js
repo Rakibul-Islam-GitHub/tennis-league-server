@@ -4,7 +4,7 @@ import connectDB from './DatabaseConnect/connectDB.js'
 import caseRoutes from './routes/caseRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import leagueRoutes from './routes/leagueRoutes.js'
-import messageRoutes from './routes/messageRoutes.js'
+import tournamentRoutes from './routes/tournamentRoutes.js'
 import { errorHandler, notFound } from './middleware/errorMiddleware.js'
 import cors from 'cors'
 import multer from 'multer'
@@ -53,7 +53,8 @@ app.get('/', (req, res) => {
 // app.use('/api/case',upload.any(), caseRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/league', leagueRoutes)
-app.use('/api/message', messageRoutes)
+app.use('/api/tournament', tournamentRoutes)
+
 
 app.use(notFound)
 app.use(errorHandler)
