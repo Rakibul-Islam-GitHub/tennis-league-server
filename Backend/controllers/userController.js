@@ -9,22 +9,28 @@ import jwt from 'jsonwebtoken'
 /// api/user/
 
 export const userRegister = ('/', asyncHandler(async(req, res) =>{
-    const {name,email} = req.body
+    const {firstname, lastname, email, city, gender, ustarating, preferedcourt, phone} = req.body
  
    
 const salt = await bcrypt.genSalt(10);
 const password = await bcrypt.hash(req.body.password, salt);
 
-const user= await User.create({name,email, password})
+const user= await User.create({firstname, lastname, email,  password, city, gender, ustarating, preferedcourt, phone})
 
 if (user) {
-    const token = jwt.sign({ id: user._id , email: user.email, role: user.role}, process.env.JWT_SECRET, {
+    const token = jwt.sign({ id: user._id , email: user.email, isAdmin: user.isAdmin, role: user.role}, process.env.JWT_SECRET, {
                     expiresIn: '30d'
                 });
     res.json({
                     id: user._id,
-                    name,
+                    firstname,
+                    lastname,
                     email,
+                    gender,
+                    city,
+                    ustarating,
+                    preferedcourt,
+                    phone,
                     image: user.image,
                     isAdmin: user.isAdmin,
                     role: user.role,
