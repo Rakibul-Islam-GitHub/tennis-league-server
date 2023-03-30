@@ -7,7 +7,7 @@ import {protect} from '../middleware/authMiddleware.js'
 router.route('/add').post(protect, createTournament)
 router.route('/').get(protect, getTournaments)
 router.route('/:id').get(protect, getTournamentById)
-router.route('/delete/:id').delete( deleteTournament)
+router.route('/delete/:id').delete(protect, deleteTournament)
 router.route('/update/:id').put( updateTournament)
 
 
