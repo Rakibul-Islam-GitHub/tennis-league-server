@@ -48,9 +48,12 @@ export const getRegisteredplayers = ('/', asyncHandler(async (req, res)=>{
       throw new Error("Registeredplayer History not found...");
     }
   }else{
-    const Registeredplayers = await Registeredplayer.find({user: req.user._id})
-    if (Registeredplayers) {
-      res.json(Registeredplayers);
+    const registeredplayers = await Registeredplayer.find({user: req.user._id}).populate({path:'tournament', select:'title format startdate enddate'})
+    .populate({path:'user', select:'firstname lastname'})
+    .populate({path:'league', select:'title level'})
+    
+    if (registeredplayers) {
+      res.json(registeredplayers);
     } else {
       res.status(404);
       throw new Error("Registeredplayer History not found...");
