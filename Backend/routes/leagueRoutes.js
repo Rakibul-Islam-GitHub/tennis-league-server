@@ -5,7 +5,7 @@ import {protect} from '../middleware/authMiddleware.js'
 
 
 router.route('/add').post(protect, createLeague)
-router.route('/').get(protect, getLeagues)
+router.route('/').get( getLeagues)
 router.route('/:id').get(protect, getLeagueById)
 router.route('/delete/:id').delete( deleteLeague)
 router.route('/update/:id').put( updateLeague)
