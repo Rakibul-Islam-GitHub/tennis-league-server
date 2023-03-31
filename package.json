@@ -11,13 +11,13 @@
     ]
   },
   "scripts": {
-    "start": "nodemon Backend/server",
+    "start": "Backend/server",
     "server": "nodemon Backend/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rakibul-Islam-GitHub/airsoft-ecommerce-MERN-stack"
+    "url": "git+https://github.com/Rakibul-Islam-GitHub/"
   },
   "author": "Rakibul Islam",
   "license": "ISC",

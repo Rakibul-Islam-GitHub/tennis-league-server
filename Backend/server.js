@@ -26,7 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 //   optionSuccessStatus: 200,
 // };
 // app.use(cors());
-var whitelist = ['http://localhost:3000', 'http://localhost:3000/dashboard', 'http://127.0.0.1:3000', 'https://tennisleague.netlify.app']
+var whitelist = ['http://localhost:3000', 'http://localhost:3000/dashboard', 'http://127.0.0.1:3000', 'https://tennisleague.netlify.app', 'https://tennisleague-v2.netlify.app']
+
 var corsOptionsDelegate = function (req, callback) {
   var corsOptions;
   if (whitelist.indexOf(req.header('Origin')) !== -1) {
