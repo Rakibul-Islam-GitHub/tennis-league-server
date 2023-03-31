@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import {addRegisteredplayer, deleteRegisteredplayer, getRegisteredplayers} from '../controllers/RegisteredplayerController.js'
+import {addRegisteredplayer, deleteRegisteredplayer, getRegisteredplayers} from '../controllers/registeredplayerController.js'
 import {protect} from '../middleware/authMiddleware.js'
 
 
