@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import {createTournament, deleteTournament, getTournamentById, getTournaments, updateTournament} from '../controllers/TournamentController.js'
+import {createTournament, deleteTournament, getTournamentById, getTournaments, updateTournament} from '../controllers/tournamentController.js'
 import {protect} from '../middleware/authMiddleware.js'
 
 
