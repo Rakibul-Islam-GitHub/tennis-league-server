@@ -11,7 +11,7 @@
     ]
   },
   "scripts": {
-    "start": "Backend/server",
+    "start": "node Backend/server",
     "server": "nodemon Backend/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
